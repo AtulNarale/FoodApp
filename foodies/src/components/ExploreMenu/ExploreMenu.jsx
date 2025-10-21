@@ -2,7 +2,7 @@ import React from 'react';
 import { categories } from '../../assets/assets';
 import './ExploreMenu.css';
 
-const ExploreMenu = () => {
+const ExploreMenu = ({category, setCategory}) => {
 
 const menuRef = React.useRef(null);
 
@@ -33,12 +33,13 @@ const scrollRight = () => {
       <div className='d-flex justify-content-between gap-4 overflow-auto explore-menu-list' ref={menuRef}>
         {categories.map((item, index) => {
           return (
-            <div key={index} className='text-center explore-menu-list-item'>
+            <div key={index} className='text-center explore-menu-list-item' 
+            onClick={() => setCategory(prev => prev === item.category ? 'All' : item.category)}>
               {/* Bigger image with some style for better visibility */}
               <img
                 src={item.icon}
                 alt={item.category}
-                className='rounded-circle shadow-sm'
+                className={item.category === category ? 'rounded-circle active' : 'rounded-circle'  }
                 height={150}
                 width={150}
                 style={{ objectFit: 'cover', padding: '5px', backgroundColor: '#fff' }}

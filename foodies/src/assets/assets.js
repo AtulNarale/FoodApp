@@ -3,28 +3,26 @@ import logo from './logo.png';
 import burger from './burger.jpeg';
 import cake from './cake.jpeg';
 import chickenbiryani from './chickenbiryani.jpg';
-import eggbiryani from './eggbiryani.jpeg';
-import icecream from './icecream.jpeg';
 import pizza from './pizza.jpeg';
 import salad from './salad.jpeg';
 import roll from './roll.jpeg';
-import chikenlollipop from './chikenlollipop.jpeg';
-import chocoicecream from './chocoicecream.jpeg';
+import pasta from './pasta.jpeg';
+import noodles from './noodles.jpeg';
 
 
 
+  
 
 export const assets = { logo, cart };
 
 export const categories = [
   { category: 'Burger', icon: burger },
   { category: 'Cake', icon: cake },
-  { category: 'Chicken Biryani', icon: chickenbiryani },
-  { category: 'Egg Biryani', icon: eggbiryani },
-  { category: 'Ice Cream', icon: icecream },
+  { category: 'Biryani', icon: chickenbiryani },
   { category: 'Pizza', icon: pizza },
   { category: 'Salad', icon: salad },
   { category: 'Roll', icon: roll },
-  { category: 'Chicken Lollipop', icon: chikenlollipop },
-  { category: 'Chocolate Ice Cream', icon: chocoicecream },
+    // ✅ Add new category here
+  { category: 'Pasta', icon: pasta },    // Example
+  { category: 'Noodles', icon: noodles } 
 ];

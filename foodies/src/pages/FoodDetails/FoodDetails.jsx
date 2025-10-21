@@ -35,11 +35,11 @@ const FoodDetails = () => {
             />
           </div>
           <div className="col-md-6">
-            <div className="small mb-1">
+            <div className="fs-5 mb-1">
               Category: <span className='badge text-bg-warning'>{data?.category}</span>
             </div>
             <h1 className="display-5 fw-bolder">{data?.name}</h1>
-            <div className="fs-5 mb-5">
+            <div className="fs-5 mb-2">
               <span>₹{data?.price}</span>
             </div>
             <p className="lead">
