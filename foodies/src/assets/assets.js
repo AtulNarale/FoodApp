@@ -2,13 +2,15 @@ import cart from './cart.png';
 import logo from './logo.png';
 import burger from './burger.jpeg';
 import cake from './cake.jpeg';
-import chickenbiryani from './chickenbiryani.jpeg';
+import chickenbiryani from './chickenbiryani.jpg';
 import eggbiryani from './eggbiryani.jpeg';
 import icecream from './icecream.jpeg';
 import pizza from './pizza.jpeg';
 import salad from './salad.jpeg';
 import roll from './roll.jpeg';
 import chikenlollipop from './chikenlollipop.jpeg';
+import chocoicecream from './chocoicecream.jpeg';
+
 
 
 
@@ -24,4 +26,5 @@ export const categories = [
   { category: 'Salad', icon: salad },
   { category: 'Roll', icon: roll },
   { category: 'Chicken Lollipop', icon: chikenlollipop },
+  { category: 'Chocolate Ice Cream', icon: chocoicecream },
 ];

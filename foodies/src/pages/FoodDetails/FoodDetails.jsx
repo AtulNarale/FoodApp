@@ -40,7 +40,7 @@ const FoodDetails = () => {
             </div>
             <h1 className="display-5 fw-bolder">{data?.name}</h1>
             <div className="fs-5 mb-5">
-              <span>{data?.price}</span>
+              <span>₹{data?.price}</span>
             </div>
             <p className="lead">
               {data?.description}

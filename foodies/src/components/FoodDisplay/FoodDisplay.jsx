@@ -15,7 +15,7 @@ const FoodDisplay = () => {
            description={food.description}
             id={food.id} 
             imageUrl={food.imageUrl} 
-            price={food.price} />
+            price={`₹${food.price}`} />
           ))
         ) : (
           <div className='text-center mt-4'>
