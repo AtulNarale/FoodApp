@@ -1,9 +1,20 @@
-import React from 'react';
-import { useParams } from 'react-router-dom'; 
+import React, { useContext } from 'react';
+import { useNavigate, useParams } from 'react-router-dom'; 
 import { fetchFoodDetails } from '../../service/foodService';
 import { toast } from 'react-toastify';
+import { StoreContext } from '../../context/StoreContext';
 
 const FoodDetails = () => {
+ const  navigate = useNavigate();
+ 
+ const  {incrementQuantity} = useContext(StoreContext);
+
+  const addToCart = () =>{
+    incrementQuantity(data.id);
+    navigate("/cart")
+  }
+
+
   const { id } = useParams();
   const [data, setData] = React.useState(null);
 
@@ -42,11 +53,11 @@ const FoodDetails = () => {
             <div className="fs-5 mb-2">
               <span>₹{data?.price}</span>
             </div>
-            <p className="lead">
+            <p className="lead"> 
               {data?.description}
             </p>
             <div className="d-flex">
-              <button className="btn btn-outline-dark flex-shrink-0" type="button">
+              <button className="btn btn-outline-dark flex-shrink-0" type="button" onClick={addToCart}>
                 <i className="bi-cart-fill me-1"></i>
                 Add to cart
               </button>

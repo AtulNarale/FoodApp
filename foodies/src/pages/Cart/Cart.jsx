@@ -1,20 +1,18 @@
 import React from 'react';
 import './Cart.css';
 import { StoreContext } from '../../context/StoreContext.jsx';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { calculateCartTotals } from '../../util/CartUtils';
 
 
 const Cart = () => {
+    const navigate = useNavigate();
 
     const { foodList, quantities, incrementQuantity, decrementQuantity ,removeFromCart } = React.useContext(StoreContext);
-
+    
     const cartItems = foodList.filter(food => quantities[food.id] > 0);
-
-    const subtotal = cartItems.reduce((total, food) => total + food.price * quantities[food.id], 0);
-
-    const shipping = subtotal > 0 ? 10 : 0; // Flat shipping rate
-    const tax = subtotal * 0.1; // Assuming 10% tax rate
-    const total = subtotal + shipping + tax;
+    
+    const{subtotal,shipping,tax,total} = calculateCartTotals(cartItems,quantities);
 
     return (
         <div className="container py-5">
@@ -113,7 +111,8 @@ const Cart = () => {
                             </div>
                             <button
                                 className="btn btn-primary w-100"
-                                disabled={cartItems.length === 0}
+                                disabled={cartItems.length === 0} 
+                                onClick={()=> navigate('/order')}
                             >
                                 Proceed to Checkout
                             </button>
