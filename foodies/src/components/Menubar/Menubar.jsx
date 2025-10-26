@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './Menubar.css';
 import { assets } from '../../assets/assets'; 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
 
 const Menubar = () => {
@@ -10,6 +10,8 @@ const Menubar = () => {
 
   const { quantities } = useContext(StoreContext); 
   const uniqueItemsIncart = Object.values(quantities || {}).filter(qty => qty > 0).length;
+
+  const navigate = useNavigate();
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
@@ -36,8 +38,8 @@ const Menubar = () => {
               {uniqueItemsIncart}
             </span>
           </div>
-          <button className="btn btn-outline-primary px-3">Login</button>
-          <button className="btn btn-outline-success px-3">Register</button>
+          <button className="btn btn-outline-primary px-3" onClick={()=>navigate('/login')}>Login</button>
+          <button className="btn btn-outline-success px-3" onClick={()=>navigate('/register')}>Register</button>
         </div>
 
       </div>

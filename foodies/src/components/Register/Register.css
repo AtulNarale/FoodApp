@@ -1,0 +1,57 @@
+/* Register.css - safe, scoped to register page only */
+
+.register-container {
+  background-image: url(../../assets/register.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  /* Make sure content centers properly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; /* keep some breathing room on small screens */
+}
+
+/* Scope the style to the card inside register-container so other cards are unaffected */
+.register-container .card {
+  /* translucent white background so the background image is visible through the form */
+  background: rgba(255, 255, 255, 0.62); /* adjust alpha (0.3 - 0.9) to taste */
+
+  /* optional soft blur for frosted-glass effect (supported in modern browsers) */
+  backdrop-filter: blur(6px);
+
+  /* visuals */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  border: none;             /* remove default border if you want a cleaner look */
+  border-radius: 12px;      /* matches your existing rounded-3 but slightly tuned */
+
+  /* ensure the card keeps its internal spacing like Bootstrap */
+  overflow: hidden;
+}
+
+/* Make sure the card-body padding is preserved (Bootstrap already applies this,
+   but in case you changed bootstrap variables, re-enforce sensible padding) */
+.register-container .card .card-body {
+  padding: 1.5rem 1.5rem;
+}
+
+/* If inputs or text appear too faint, ensure they have full opacity */
+.register-container input.form-control,
+.register-container label,
+.register-container .btn {
+  opacity: 1;
+}
+
+/* Small-screen tweak: keep the card width responsive */
+.register-container .col-sm-9.col-md-7.col-lg-5.mx-auto {
+  width: 100%;
+  max-width: 480px; /* keeps form from getting too wide on large screens */
+}
+
+/* Optional: subtle focus style for inputs */
+.register-container .form-control:focus {
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.15);
+  border-color: #0d6efd;
+}

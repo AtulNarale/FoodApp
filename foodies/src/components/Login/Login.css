@@ -1,0 +1,25 @@
+.login-container{
+    background-image: url(../../assets/login.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+}
+.login-form-container {
+  background: rgba(255, 255, 255, 0.85); /* translucent white background */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Make the login card slightly see-through */
+.login-container .card {
+  background: rgba(255, 255, 255, 0.7); /* adjust 0.7 → 0.5 for more transparency */
+  backdrop-filter: blur(6px); /* optional: gives frosted glass effect */
+  border: none;
+}
